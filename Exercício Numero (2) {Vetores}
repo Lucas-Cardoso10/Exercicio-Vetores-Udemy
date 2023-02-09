@@ -1,0 +1,49 @@
+using System;
+using System.Globalization;
+using System.Runtime.Serialization;
+
+namespace MaiorNumeroVetor
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            int[] numeros = new int[n];
+            int[] pares = new int[n];
+            int posicao = 0;
+
+            string[] vet = Console.ReadLine().Split(' ');
+
+
+            for (int i = 0; i < n; i++)
+            {
+                int soma = 0;
+                numeros[i] = int.Parse(vet[i]);
+
+                if (numeros[i] % 2 == 0)
+                {
+                    pares[i] = numeros[i];
+                    posicao = posicao + 1;
+                }
+
+
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+
+                if (numeros[i] % 2 == 0)
+                {
+                    Console.Write(pares[i] + " ");
+
+
+                }
+
+            }
+            Console.WriteLine();
+            Console.Write(posicao);
+
+        }
+    }
+}

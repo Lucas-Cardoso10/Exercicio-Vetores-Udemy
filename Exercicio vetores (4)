@@ -1,0 +1,35 @@
+using System;
+using System.Globalization;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Informe o tamanho dos vetor ");
+        int n = int.Parse(Console.ReadLine());
+
+        double[] vetorA = new double[n];
+
+        string[] NumerosReais = Console.ReadLine().Split(' ');
+
+        double vazio = 0;
+        for (int i=0; i<n; i++)
+        {
+
+            vetorA[i] = double.Parse(NumerosReais[i],CultureInfo.InvariantCulture);
+            vazio = vazio + vetorA[i];
+        }
+        double media = vazio / n;
+
+        Console.WriteLine(media.ToString("F3", CultureInfo.InvariantCulture));
+
+        for (int i=0; i<n; i++)
+        {
+            if (vetorA[i] < media) {
+
+                Console.WriteLine(vetorA[i].ToString("F1", CultureInfo.InvariantCulture));
+            
+            }
+
+        }        
+    }
+}

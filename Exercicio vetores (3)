@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Informe o tamanho dos vetores A e B: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[] vetorA = new int[n];
+        int[] vetorB = new int[n];
+        int[] vetorC = new int[n];
+
+        Console.WriteLine("Informe os elementos do vetor A: ");
+        string[] vet = Console.ReadLine().Split(' ');
+        
+        for (int i = 0; i < n; i++)
+        {
+            vetorA[i] = int.Parse(vet[i]);
+        }
+
+        Console.WriteLine("Informe os elementos do vetor B: ");
+        string[] vet2 = Console.ReadLine().Split(' ');
+
+        for (int i = 0; i < n; i++)
+        {
+            vetorB[i] = int.Parse(vet2[i]);
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            vetorC[i] = vetorA[i] + vetorB[i];
+        }
+
+        Console.WriteLine("Vetor C: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(vetorC[i] + " ");
+        }
+        Console.WriteLine();
+    }
+}

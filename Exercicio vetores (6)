@@ -1,0 +1,30 @@
+using System;
+using System.Globalization;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+
+        string[] vetNomes = new string[n];
+        int[] VetIdades = new int[n];
+        int idadeMax = 0;
+        int posicao = 0;
+        for (int i=0; i<n; i++)
+        {
+            Console.WriteLine("digite o nome da pessoa " + (i + 1) );
+            vetNomes[i] = Console.ReadLine();
+            Console.WriteLine("digite o nome a idade da pessoa " + (i + 1));
+            VetIdades[i] = int.Parse(Console.ReadLine());
+
+            if (VetIdades[i] > idadeMax)
+            {
+
+                idadeMax = VetIdades[i];
+                posicao = i;
+            }
+        }
+        Console.WriteLine("Pessoa mais velha: " + vetNomes[posicao]);
+        
+    }
+}
